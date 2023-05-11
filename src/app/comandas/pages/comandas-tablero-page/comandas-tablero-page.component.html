@@ -1,3 +1,18 @@
-<div>
-    <button class="btn btn-success">Nueva Comanda</button>
+<div class="intern-menu">
+    <div class="d-flex justify-content-end p-3">
+        <button class="btn btn-success">Nueva Comanda</button>
+    </div>
 </div>
+
+<div *ngIf="comandas.length === 0; else panel" class="alert alert-warning text-center">
+    No hay comandas que mostrar
+</div>
+
+<ng-template class="panel-comandas d-flex" #panel>
+
+    <div *ngFor="let comanda of comandas">
+        <comanda-card [comanda]="comanda"></comanda-card>
+    </div>
+
+</ng-template>
+

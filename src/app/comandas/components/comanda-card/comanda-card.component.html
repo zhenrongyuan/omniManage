@@ -1,0 +1,33 @@
+<div class="card border-dark m-1" style="width: 18rem;">
+    <div class="card-header d-flex justify-content-between">
+        <small>{{ this.comanda.cliente?.nombre }}</small>
+        <small><strong>{{ this.comanda.tipo.glosa }}</strong></small>
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li *ngFor="let det of this.comanda.detalle" class="list-group-item d-flex justify-content-between">
+                <span>{{ det.cantidad }}</span> 
+                <span> {{ det.producto.nombre }} </span> 
+                <span><strong> {{ det.producto.precio }} </strong>
+                </span>
+            </li>
+        </ul>
+
+    </div>
+    <div class="card-footer">
+       <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-end">
+            <span>Subtotal:</span>
+            <span><strong> {{ this.comanda.cuenta.subtotal }} </strong></span>
+        </li>
+        <!-- <li class="list-group-item d-flex justify-content-end">
+            <span>Propina Sugerida (10%):</span>
+            <span><strong> {{ this.comanda.cuenta.propina }}</strong></span>
+        </li> -->
+        <li class="list-group-item d-flex justify-content-end">
+            <span>Total:</span>
+            <span><strong> {{ this.comanda.cuenta.total }}</strong></span>
+        </li>
+       </ul>
+    </div>
+</div>
