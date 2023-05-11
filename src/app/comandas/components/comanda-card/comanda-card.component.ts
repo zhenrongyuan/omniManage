@@ -13,7 +13,6 @@ export class ComandaCardComponent implements OnInit{
   public comanda!: Comanda;
 
   ngOnInit(): void {
-    console.log(this.comanda.cliente?.nombre);
     
   }
 

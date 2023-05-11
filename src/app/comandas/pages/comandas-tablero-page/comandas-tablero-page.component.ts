@@ -12,6 +12,7 @@ export class ComandasTableroPageComponent implements OnInit{
   public comandas: Comanda[] =[];
 
   constructor( private comandasService: ComandasService) { }
+  
   ngOnInit(): void {
     this.comandasService.getComandas()
       .subscribe( comandas => 
