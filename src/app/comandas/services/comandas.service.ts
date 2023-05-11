@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ComandasResultado } from '../interfaces/comanda';
+import { environments } from 'src/app/enviroments/enviroments';
 
 
 @Injectable({
@@ -9,7 +10,8 @@ import { ComandasResultado } from '../interfaces/comanda';
 })
 export class ComandasService {
 
-  private apiUrl: string = 'http://localhost:3800/api';
+  private apiUrl: string = environments.baseUrl;
+
   constructor( private http: HttpClient ) { }
 
   getComandas(): Observable<ComandasResultado>{
