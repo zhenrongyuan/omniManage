@@ -6,7 +6,7 @@ import { ProductosPageComponent } from './productos/pages/productos-page/product
 
 const routes: Routes = [
   {
-    path: 'tablero-comandas',
+    path: 'comandas-tablero',
     component: ComandasTableroPageComponent
   },
   {
@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'productos',
     component: ProductosPageComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'comandas-tablero'
   },
 ];
 

@@ -4,6 +4,7 @@ import { ComandasModule } from '../comandas/comandas.module';
 import { ProductosModule } from '../productos/productos.module';
 import { DashboardModule } from '../dashboard/dashboard.module';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,15 +14,14 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
   ],
   imports: [
     CommonModule,
-
-    ComandasModule,
-    ProductosModule,
-    DashboardModule
+    RouterModule,
   ],
   exports: [
     ComandasModule,
     ProductosModule,
-    DashboardModule
+    DashboardModule,
+    SidebarComponent,
+
   ]
 })
 export class SharedModule { }
