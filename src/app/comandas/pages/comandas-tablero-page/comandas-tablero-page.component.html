@@ -1,4 +1,4 @@
-<div class="intern-menu">
+<div class="intern-menu fixed-top">
     <div class="d-flex justify-content-end p-3">
         <button class="btn btn-success">Nueva Comanda</button>
     </div>
@@ -8,11 +8,11 @@
     No hay comandas que mostrar
 </div>
 
-<ng-template class="panel-comandas d-flex" #panel>
-
-    <div *ngFor="let comanda of comandas">
-        <comanda-card [comanda]="comanda"></comanda-card>
+<ng-template class="panel-comandas" #panel>
+    <div class="d-flex justify-content-center">
+        <div *ngFor="let comanda of comandas">
+            <comanda-card [comanda]="comanda"></comanda-card>
+        </div>
     </div>
-
 </ng-template>
 
