@@ -9,7 +9,7 @@ import { MedioDePago } from "src/app/shared/interfaces/MedioDePago"
 import { Producto } from "src/app/productos/interfaces/producto"
 
 const cliente: Cliente = {
-    nombre: 'cliente',
+    nombre: '',
     correo: 'cliente@cliente.com',
     direccion: 'S/D',
     celular: '0'
@@ -59,7 +59,7 @@ const cuenta: Cuenta = {
 
 const personal: Personal = {
     rut: '123456789-k',
-    nombre: 'personal1',
+    nombre: 'Camarero 1',
     direccion: 'S/D',
     celular: '9876543210',
     fecha_ingreso: '2000-01-01',
@@ -72,7 +72,7 @@ const tipoProducto: Tipo = {
 }
 
 export const producto: Producto = {
-    nombre: 'prod1',
+    nombre: 'Sin Productos',
     descripcion: 'descripcion prod1',
     precio: 0,
     tipo: tipoProducto,
