@@ -48,7 +48,7 @@ const estadoComanda: Estado = {
 }
 
 
-const cuenta: Cuenta = {
+export const cuenta: Cuenta = {
     subtotal: 0,
     propina: 0,
     total: 0,
@@ -90,7 +90,7 @@ const detalle: Detalle = {
 
 
 export const comandaNueva: Comanda = {
-    _id: 'id_comanda',
+    _id: 'idCN123',
     cliente: cliente,
     mesa: mesa,
     tipo: tipoComanda,
