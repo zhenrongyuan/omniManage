@@ -1,5 +1,23 @@
 <div>
     <h1>Productos</h1>
     <hr>
-    <producto-tabla [productos]="productos"></producto-tabla>
+    <nav-productos 
+        [tiposProducto]="tiposProducto" 
+        (tipoProductoSeleccionado)="filtrar($event)"
+        >
+    </nav-productos>
+
+    <div class="tab-content" id="myTabContent">
+
+        <div
+            class="tab-pane fade show active" 
+            id="tab-item" 
+            role="tabpanel" 
+            aria-labelledby="tab-item" 
+            tabindex="0">
+            <producto-tabla [productos]="productos"></producto-tabla>
+        </div>
+
+    </div>
+
 </div>
