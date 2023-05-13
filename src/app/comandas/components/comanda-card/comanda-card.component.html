@@ -6,7 +6,7 @@
     <div class="card-body">
         <ul class="list-group list-group-flush">
             <li *ngFor="let det of this.comanda.detalle" class="list-group-item d-flex justify-content-between">
-                <span>{{ det.cantidad }}</span> 
+                <span class="m-1"><strong>{{ det.cantidad }}</strong></span> 
                 <span> {{ det.producto.nombre }} </span> 
                 <span><strong> {{ det.producto.precio }} </strong>
                 </span>
