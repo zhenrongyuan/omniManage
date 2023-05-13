@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProductoService } from '../../services/producto.service';
 import { Producto } from '../../interfaces/producto';
 import { Detalle } from 'src/app/comandas/interfaces/comanda';
@@ -14,6 +14,8 @@ export class ProductosPanelSeleccionComponent implements OnInit {
   @Input()
   public productos: Producto[] = [];
   @Output()
+  public detalleEmit = new EventEmitter<Detalle[]>();
+
   public detalles: Detalle[] = [];
 
   constructor(private productoService: ProductoService) { }
@@ -42,6 +44,7 @@ export class ProductosPanelSeleccionComponent implements OnInit {
       this.sustraerDetalle(producto);
     }
 
+    this.detalleEmit.emit( this.detalles );
     console.log(this.detalles);
     
   }

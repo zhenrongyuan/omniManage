@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Comanda } from '../../interfaces/comanda';
+import { Comanda, Detalle } from '../../interfaces/comanda';
 import { Tipo } from 'src/app/shared/interfaces/Tipo';
 import { TipoProductoService } from 'src/app/shared/services/tipoProducto.service';
 import { Producto } from 'src/app/productos/interfaces/producto';
@@ -35,5 +35,11 @@ export class ComandaCrearNuevaPageComponent implements OnInit{
     .subscribe( producto => 
       this.productos = producto['productos'].filter( producto => producto.tipo.clave === clave )
       );
+  }
+
+  actualizarDetalles(detalles: Detalle[]):void{
+    this.comandaNueva.detalle = detalles;
+   
+    
   }
 }
