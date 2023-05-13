@@ -8,7 +8,7 @@
             <li *ngFor="let det of this.comanda.detalle" class="list-group-item d-flex justify-content-between">
                 <span class="m-1"><strong>{{ det.cantidad }}</strong></span> 
                 <span> {{ det.producto.nombre }} </span> 
-                <span><strong> {{ det.producto.precio }} </strong>
+                <span class="monto-neto" disabled><strong> {{ det.monto_neto }} </strong>
                 </span>
             </li>
         </ul>
@@ -20,10 +20,10 @@
             <span>Subtotal:</span>
             <span><strong> {{ this.comanda.cuenta.subtotal }} </strong></span>
         </li>
-        <!-- <li class="list-group-item d-flex justify-content-end">
+        <li class="list-group-item d-flex justify-content-end">
             <span>Propina Sugerida (10%):</span>
             <span><strong> {{ this.comanda.cuenta.propina }}</strong></span>
-        </li> -->
+        </li>
         <li class="list-group-item d-flex justify-content-end">
             <span>Total:</span>
             <span><strong> {{ this.comanda.cuenta.total }}</strong></span>
