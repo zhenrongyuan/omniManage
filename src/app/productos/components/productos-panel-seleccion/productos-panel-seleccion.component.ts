@@ -45,7 +45,6 @@ export class ProductosPanelSeleccionComponent implements OnInit {
     }
 
     this.detalleEmit.emit( this.detalles );
-    console.log(this.detalles);
     
   }
 
