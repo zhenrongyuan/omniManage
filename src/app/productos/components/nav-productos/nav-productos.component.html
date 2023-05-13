@@ -1,0 +1,18 @@
+<ul class="nav nav-tabs" id="nav-productos" role="tablist">
+    <li *ngFor="let tipo of tiposProducto" 
+        class="nav-item" 
+        role="presentation">
+        <button 
+            class="nav-link" 
+            id="{{tipo.clave}}" 
+            data-bs-toggle="tab" 
+            [attr.data-bs-target]="'#'+tipo.clave+'-tab-pane'" 
+            type="button" 
+            role="tab" 
+            [attr.aria-controls]="tipo.clave+'-tab-pane'" 
+            aria-selected="true"
+            (click)="filtrar(tipo.clave)">
+            {{tipo.glosa}}
+        </button>
+    </li>
+</ul>

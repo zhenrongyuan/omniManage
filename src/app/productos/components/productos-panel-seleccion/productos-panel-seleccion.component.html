@@ -1,0 +1,33 @@
+
+<div class="d-flex flex-wrap">
+    <div *ngFor="let producto of productos">
+
+        <div class="input-group-sm m-2 px-2 d-flex">
+            <button type="button" 
+                    class="btn btn-warning"
+                    (click)="procesarDetalle(producto,-1)"
+                    >-</button>
+
+            <span class="input-group-text" 
+                  id="basic-addon1"
+                  (click)="procesarDetalle(producto,1)"
+                  >{{producto.nombre}}
+                 
+            </span>
+            <!-- <input 
+                type="text" 
+                class="form-control" 
+                placeholder="cantidad" 
+                aria-label="cantidad" 
+                [id]="'cantidad-'+producto._id"
+                value="0"
+                > -->
+       
+            <button type="button" 
+                    class="btn btn-info"
+                    (click)="procesarDetalle(producto,1)">+</button>
+       
+        </div>
+    </div>
+
+</div>

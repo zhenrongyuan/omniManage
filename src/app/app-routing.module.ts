@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ComandasTableroPageComponent } from './comandas/pages/comandas-tablero-page/comandas-tablero-page.component';
 import { DashboardPageComponent } from './dashboard/pages/dashboard-page/dashboard-page.component';
 import { ProductosPageComponent } from './productos/pages/productos-page/productos-page.component';
+import { ComandaCrearNuevaPageComponent } from './comandas/pages/comanda-crear-nueva-page/comanda-crear-nueva-page.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'productos',
     component: ProductosPageComponent
+  },
+  {
+    path: 'nueva-comanda',
+    component: ComandaCrearNuevaPageComponent
   },
   {
     path: '**',

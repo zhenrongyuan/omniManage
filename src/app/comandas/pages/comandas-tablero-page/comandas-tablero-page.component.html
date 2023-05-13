@@ -1,6 +1,12 @@
 <div class="intern-menu fixed-top">
     <div class="d-flex justify-content-end p-3">
-        <button class="btn btn-success">Nueva Comanda</button>
+        <button 
+            class="btn btn-primary" 
+            type="button" 
+            
+            [routerLink]="'/nueva-comanda'"
+            >Nueva Comanda
+        </button>
     </div>
 </div>
 
@@ -11,6 +17,7 @@
 <ng-template class="panel-comandas" #panel>
     <div class="d-flex justify-content-center">
         <div *ngFor="let comanda of comandas">
+            <button class="btn btn-info" (click)="imprimirComanda(comanda)">Imprimir</button>
             <comanda-card [comanda]="comanda"></comanda-card>
         </div>
     </div>
