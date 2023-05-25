@@ -7,6 +7,7 @@ import { ProductoService } from 'src/app/productos/services/producto.service';
 import { comandaNueva, cuenta, cuenta as cuentaNueva } from '../../interfaces/comandaNueva';
 import { Cuenta } from 'src/app/shared/interfaces/Cuenta';
 import * as printJS from 'print-js';
+import { ComandasService } from '../../services/comandas.service';
 
 @Component({
   selector: 'app-comanda-crear-nueva-page',
@@ -21,7 +22,8 @@ export class ComandaCrearNuevaPageComponent implements OnInit{
   public comandaNueva: Comanda = comandaNueva;
   
   constructor( private tiposProductoService: TipoProductoService,
-               private productoService: ProductoService ){ }
+               private productoService: ProductoService, 
+               private comandaService: ComandasService ){ }
 
   ngOnInit(): void {
     this.tiposProductoService.getTiposProducto()
@@ -72,6 +74,14 @@ export class ComandaCrearNuevaPageComponent implements OnInit{
     cuentaNueva.propina = 0;
     cuentaNueva.total = 0;
     cuentaNueva.comentario = '';
+  }
+
+  async enviarComanda( comanda: Comanda){
+    
+    this.comandaService.saveComanda( comanda ).subscribe(()=>{
+      this.imprimirComanda( comanda )
+      
+    });
   }
 
   imprimirComanda(comanda: Comanda){

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ComandasResultado } from '../interfaces/comanda';
+import { Comanda, ComandasResultado } from '../interfaces/comanda';
 import { environments } from 'src/app/enviroments/enviroments';
 
 
@@ -18,5 +18,9 @@ export class ComandasService {
     
     return this.http.get<ComandasResultado>(`${ this.apiUrl }/comanda`);
 
+  }
+
+  saveComanda( comanda:Comanda){
+    return this.http.post<Comanda>( `${ this.apiUrl}/comanda`, comanda);
   }
 }
