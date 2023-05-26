@@ -39,7 +39,6 @@ export class ModalAgregarProductosComponent {
   }
 
   cerrarModal():void{
-
-    this.closeModal.emit('cerrarModal');
+    this.closeModal.emit('');
   }
 }

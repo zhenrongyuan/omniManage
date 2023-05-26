@@ -21,11 +21,10 @@
   </div>
 
   <!-- Modal -->
-<!-- (onCloseModal)="this.onCloseModal()" -->
   <modal-agregar-productos 
   [tiposProducto]="tiposProducto"
   (actualizaDetalles)="actualizarDetalles($event)"
-  (cerrarModal)="onCloseModal()"
+  (closeModal)="onCloseModal($event)"
   ></modal-agregar-productos>
 
 </div>

@@ -49,8 +49,7 @@ export class ComandaCrearNuevaPageComponent implements OnInit{
 
   }
 
-  onCloseModal():void{
-    
+  onCloseModal(s:string):void{
     this.reinicializarValores();
     this.comandaNueva.cuenta = cuentaNueva;
     const cuenta: Cuenta = this.calcularComanda(comandaNueva);
