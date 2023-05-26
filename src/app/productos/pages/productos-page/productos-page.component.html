@@ -1,5 +1,10 @@
 <div>
-    <h1>Productos</h1>
+    <div class="d-flex justify-content-between">
+        <h1>Productos</h1>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editarProducto">
+            Agregar producto
+          </button>
+    </div>
     <hr>
     <nav-productos 
         [tiposProducto]="tiposProducto" 
@@ -7,7 +12,7 @@
         >
     </nav-productos>
 
-    <div class="tab-content" id="myTabContent">
+    <div class="tab-content" id="tablaProductos">
 
         <div
             class="tab-pane fade show active" 
@@ -20,4 +25,5 @@
 
     </div>
 
+    <modal-editar-producto></modal-editar-producto>
 </div>

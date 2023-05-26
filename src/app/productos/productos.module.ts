@@ -5,6 +5,7 @@ import { ProductoTablaComponent } from './components/producto-tabla/producto-tab
 import { NavProductosComponent } from './components/nav-productos/nav-productos.component';
 import { ProductosPanelSeleccionComponent } from './components/productos-panel-seleccion/productos-panel-seleccion.component';
 import { ModalAgregarProductosComponent } from './components/modal-agregar-productos/modal-agregar-productos.component';
+import { ModalEditarProductoComponent } from './components/modal-editar-producto/modal-editar-producto.component';
 
 
 
@@ -15,6 +16,7 @@ import { ModalAgregarProductosComponent } from './components/modal-agregar-produ
     ProductosPageComponent,
     ProductosPanelSeleccionComponent,
     ProductoTablaComponent,
+    ModalEditarProductoComponent,
   ],
   imports: [
     CommonModule
