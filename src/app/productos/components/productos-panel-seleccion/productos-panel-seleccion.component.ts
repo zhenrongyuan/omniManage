@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProductoService } from '../../services/producto.service';
 import { Producto } from '../../interfaces/producto';
 import { Detalle } from 'src/app/comandas/interfaces/comanda';
@@ -14,7 +14,7 @@ export class ProductosPanelSeleccionComponent implements OnInit {
   @Input()
   public productos: Producto[] = [];
   @Output()
-  public detalleEmit = new EventEmitter<Detalle[]>();
+  public actualizaDetalle = new EventEmitter<Detalle[]>();
 
   public detalles: Detalle[] = [];
 
@@ -30,7 +30,7 @@ export class ProductosPanelSeleccionComponent implements OnInit {
   }
 
   procesarDetalle(producto: Producto, cantidad: number):void {
-
+    
     let detalleNuevo: Detalle = {
       cantidad: 1,
       producto: producto,
@@ -44,7 +44,7 @@ export class ProductosPanelSeleccionComponent implements OnInit {
       this.sustraerDetalle(producto);
     }
 
-    this.detalleEmit.emit( this.detalles );
+    this.actualizaDetalle.emit( this.detalles );
     
   }
 

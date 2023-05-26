@@ -18,12 +18,6 @@ export class NavProductosComponent {
 
   filtrar(clave:string){
     this.tipoProductoSeleccionado.emit( clave );
-    // const tabProducto = document.getElementById( clave );
-    // if (tabProducto != null) {
-    //   tabProducto.classList.add(
-    //     'active'
-    //    );
-    // }
 
   }
 }

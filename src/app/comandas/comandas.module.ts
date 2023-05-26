@@ -6,12 +6,13 @@ import { ProductosModule } from '../productos/productos.module';
 import { ComandaCrearNuevaPageComponent } from './pages/comanda-crear-nueva-page/comanda-crear-nueva-page.component';
 import { RouterModule } from '@angular/router';
 import { DetallesGeneralesComponent } from './components/detalles-generales/detalles-generales.component';
+import { ModalAgregarProductosComponent } from '../productos/components/modal-agregar-productos/modal-agregar-productos.component';
 
 @NgModule({
     declarations: [
-        ComandasTableroPageComponent,
         ComandaCardComponent,
         ComandaCrearNuevaPageComponent,
+        ComandasTableroPageComponent,
         DetallesGeneralesComponent,
     ],
     exports: [
@@ -20,6 +21,7 @@ import { DetallesGeneralesComponent } from './components/detalles-generales/deta
     imports: [
         CommonModule,
         RouterModule,
+
         ProductosModule,
     ]
 })

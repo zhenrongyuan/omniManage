@@ -18,11 +18,9 @@ import { ComandasService } from '../../services/comandas.service';
 export class ComandaCrearNuevaPageComponent implements OnInit{
 
   public tiposProducto: Tipo[] = [];
-  public productos: Producto[] = [];
   public comandaNueva: Comanda = comandaNueva;
   
   constructor( private tiposProductoService: TipoProductoService,
-               private productoService: ProductoService, 
                private comandaService: ComandasService ){ }
 
   ngOnInit(): void {
@@ -30,15 +28,20 @@ export class ComandaCrearNuevaPageComponent implements OnInit{
       .subscribe( tipo => {
         this.tiposProducto = tipo['tiposProducto'];
       });
+
+    // this.productoService.getProductos()
+    // .subscribe( productos => {
+    //   this.productos = productos['productos']
+    // })
   }
 
-  filtrar(clave: string){
+  // filtrar(clave: string){
     
-    this.productoService.getProductos()
-    .subscribe( producto => 
-      this.productos = producto['productos'].filter( producto => producto.tipo.clave === clave )
-      );
-  }
+  //   this.productoService.getProductos()
+  //   .subscribe( producto => 
+  //     this.productos = producto['productos'].filter( producto => producto.tipo.clave === clave )
+  //     );
+  // }
 
   actualizarDetalles(detalles: Detalle[]):void{
     this.comandaNueva.detalle = detalles;
@@ -47,6 +50,7 @@ export class ComandaCrearNuevaPageComponent implements OnInit{
   }
 
   onCloseModal():void{
+    
     this.reinicializarValores();
     this.comandaNueva.cuenta = cuentaNueva;
     const cuenta: Cuenta = this.calcularComanda(comandaNueva);
